@@ -1,0 +1,23 @@
+{{! CLIENT SIDE }}
+<h1>Bienvenido al chat!</h1>
+<h2><span id='usernameDisplay'></span></h2>
+
+<div>
+	{{! The box where we write the messages }}
+	<input type='text' id='chatBox' />
+</div>
+<div>
+	{{! Container to show all the messages sent }}
+	<h2>Messages log:</h2>
+	<div id='messageLog'></div>
+
+</div>
+
+{{! The Socket.io script is added that allows us ti connect to the server via websockets }}
+<script src='/socket.io/socket.io.js'></script>
+
+{{! CDN for the sweetalert2 }}
+<script src='//cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+
+{{! The script that will be executed on the server side }}
+<script src='/js/index.js'></script>
