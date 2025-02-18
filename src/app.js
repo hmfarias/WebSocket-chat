@@ -68,7 +68,9 @@ io.on('connection', (socket) => {
 	// USER DISCONNECTED
 	// emit a message to all the clients EXCEPT the CURRENT ONE, about the  user disconnected
 	socket.on('disconnect', () => {
-		console.log(`User disconnected: ${username}`);
-		socket.broadcast.emit('userDisconnected', username);
+		if (username) {
+			console.log(`User disconnected: ${username}`);
+			socket.broadcast.emit('userDisconnected', username);
+		}
 	});
 });
